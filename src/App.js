@@ -1,7 +1,21 @@
-import React from "react";
+// import React from "react";
+// import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+// import Home from "./Home";
+// const App = () => {
+//     return ( <
+//         Router >
+//         <
+//         Routes >
+//         <
+//         Route path = "/"
+//         element = { < Home / > }
+//         /> <
+//         Route path = "/about"
+//         element = { < About / > }
+//         /> <
+//         /Routes> <
+//         /Router>
+//     );
+// };
 
-const App = () => {
-    return <div > Welcome to shahzad Akram React E - Commerce Website < /div>;
-};
-
-export default App;
+// export default App;
