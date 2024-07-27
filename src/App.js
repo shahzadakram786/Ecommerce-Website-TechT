@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
+import About from "./About";
 const App = () => {
   return (
     <Router>
@@ -9,7 +10,7 @@ const App = () => {
         <Route path="/about" element={<About />} />{" "}
       </Routes>{" "}
     </Router>
-  );
+  
 };
 
 export default App;
