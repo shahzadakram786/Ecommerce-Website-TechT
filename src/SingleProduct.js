@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-return <Wrapper></Wrapper>;
+const SingleProduct = () => {
+  return (
+    <Wrapper>
+      {" "}
+      <div> this is single priduct page </div>{" "}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   .container {
@@ -58,7 +65,6 @@ const Wrapper = styled.section`
     hr {
       max-width: 100%;
       width: 90%;
-      /* height: 0.2rem; */
       border: 0.1rem solid #000;
       color: red;
     }
