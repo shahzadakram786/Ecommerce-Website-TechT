@@ -42,14 +42,16 @@ color: ${({ theme }) => theme.colors.helper};
 
  .cart-trolley {
  position:relative;
- font-size : 5.2rem;
+ font-size : 3.2rem;
+ color:#000
  }
 
 .cart-total--item{
 width:2.4rem;
 height:2.4rem;
 position:absolute;
-background-color:#000;
+// padding:10px;
+background-color:#5271FF;
 color:#000;
 border-radius:50%;
 display:grid;
@@ -88,7 +90,7 @@ background-color:${({ theme }) => theme.colors.helper}
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />{" "}
-              <span className="cart-total--item"> 10 </span>{" "}
+              <span className="cart-total--item"> 9 </span>{" "}
             </NavLink>{" "}
           </li>{" "}
         </ul>{" "}
