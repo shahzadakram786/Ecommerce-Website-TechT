@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
+import { CgMenu, CgClose } from "react-icons/cg";
 
 const Nav = () => {
   // this is  for  styling of the navlink
@@ -23,43 +24,55 @@ const Nav = () => {
           transition: color 0.3s ease-in-out;
         }
 
-&:hover,
-&:active {
-color: ${({ theme }) => theme.colors.helper};
+        &:hover,
+        &:active {
+          color: ${({ theme }) => theme.colors.helper};
+        }
 
-}
+        // navbar-link {
+        // font-size:4.2rem;
+        // }.
+      }
 
-// navbar-link {
-// font-size:4.2rem;
-// }.
+      .cart-trolley--link {
+        position: relative;
 
-}
+        .cart-trolley {
+          position: relative;
+          font-size: 3.2rem;
+          color: #000;
+        }
 
+        .cart-total--item {
+          width: 2.4rem;
+          height: 2.4rem;
+          position: absolute;
+          // padding:10px;
+          background-color: #5271ff;
+          color: #000;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          top: -20%;
+          left: 70%;
+          background-color: ${({ theme }) => theme.colors.helper};
+        }
+      }
+    }
 
+    .mobile-navbar-btn {
+      //   display: none;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+    }
 
-.cart-trolley--link{
- position:relative;
+    .mobile-nav-icon[name="close-outline"] {
+      display: none;
+    }
 
- .cart-trolley {
- position:relative;
- font-size : 3.2rem;
- color:#000
- }
-
-.cart-total--item{
-width:2.4rem;
-height:2.4rem;
-position:absolute;
-// padding:10px;
-background-color:#5271FF;
-color:#000;
-border-radius:50%;
-display:grid;
-place-items:center;
-top:-20%;
-left:70%;
-background-color:${({ theme }) => theme.colors.helper}
-}
+    .close-outline {
+      display: none;
     }
   `;
 
@@ -94,6 +107,14 @@ background-color:${({ theme }) => theme.colors.helper}
             </NavLink>{" "}
           </li>{" "}
         </ul>{" "}
+        {/* for the open and close toggle menu  */}{" "}
+        <div className="mobile-navbar-btn">
+          <CgMenu name="menu-outline" className="mobile-nav-icon" />
+          <CgClose
+            name="close-outline"
+            className="mobile-nav-icon close-outline"
+          />
+        </div>{" "}
       </div>{" "}
     </Nav>
   );
