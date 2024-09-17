@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Cart = () => {
-  return <Wrapper></Wrapper>;
+  return <Wrapper> </Wrapper>;
 };
 
 const Wrapper = styled.section`
@@ -180,3 +180,4 @@ const Wrapper = styled.section`
 `;
 
 export default Cart;
+// hello
