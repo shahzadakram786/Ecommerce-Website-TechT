@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Trusted = () => {
+const Services = () => {
     return (
         <div>
             Trusted
@@ -8,4 +8,4 @@ const Trusted = () => {
     )
 }
 
-export default Trusted
+export default Services
