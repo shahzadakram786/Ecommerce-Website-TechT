@@ -5,7 +5,7 @@ import { MdSecurity } from "react-icons/md";
 import { GiReceiveMoney } from "react-icons/gi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 
-const Survices = () => {
+const Services = () => {
   return (
     <Wrapper>
       <div className="container">
@@ -64,7 +64,7 @@ gap:4.8rem
   box-shadow:rgba(0,0,0,0.05) 0px 1px 2px 0px;
 
 .services-2 {
-    gap: 4rem;
+    // gap: 4rem; 
     background-color: transparent;
     box-shadow: none;
 
@@ -100,7 +100,7 @@ padding:2rem;
 border-radius:50%;
 background-color:#fff;
 color:#5138ee;
-}
+margin:auto;}
 
 `;
-export default Survices;
+export default Services;
