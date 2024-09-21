@@ -25,7 +25,7 @@ const Footer = () => {
         {/* footer section */}
 
         <footer>
-          <div className="container grid grid-four-column">
+          <div className="container  grid grid-four-column">
             <div className="footer-about">
               <h3>Thapa Technical</h3>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
@@ -145,6 +145,14 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+
+//   .footer-res{
+//   display:flex;
+//   justify-content:center;
+//   align-items:center;
+//   flex-direction:column;
+  
+//   }
     .contact-short {
       max-width: 80vw;
       margin: 4.8rem auto;
