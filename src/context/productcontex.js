@@ -3,7 +3,7 @@
 // consumer 
 
 import axios from "axios";
-import { createContext , useContext, useEffect, useReducer } from "react";
+import { createContext , useCallback, useContext, useEffect, useReducer } from "react";
 import reducer from "../reducer/productReducer"
 
 
@@ -17,15 +17,16 @@ const AppContext = createContext();
         isError : false,
         Products:[],
         featureProducts:[],
+        isSingleLoading:false,
+        singleProduct:{},
     }
 
 const AppProvider = ({children}) => {
-
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const getProducts = async(url) => {
         dispatch({type:"Api_Loading"})
-         
+
 try {
     const res = await axios.get(url);
      console.log("response from url or api" , res);
@@ -37,12 +38,29 @@ try {
     
 }}
 
-    useEffect(()=>{
-        getProducts(API)
-    },[])
+//  my 2nd api call for single product page 
+const getSingleProduct =useCallback(
+    async(url)=>{
+        dispatch({type:"SET_LOADING"})
+        try {
+            const res = await axios.get(url);
+            const singleProduct = res.data;
+            dispatch({type:"SET_SINGLE_PRODUCT",payload:singleProduct})
+        } catch (error) {
+            dispatch({type:"SET_SINGLE_ERROR"})
+            
+        }
+    },
+    
+  [],
+)
+ 
+        useEffect(()=>{
+            getProducts(API)
+        },[])
 
 
-    return <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{...state ,getSingleProduct}}>{children}</AppContext.Provider>
 };
 
 
