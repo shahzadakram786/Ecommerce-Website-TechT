@@ -64,7 +64,7 @@ const getSingleProduct =useCallback(
 };
 
 
-//custome hooks
+//custom hooks
 const useProductContext = () => {
     return useContext(AppContext);
 }

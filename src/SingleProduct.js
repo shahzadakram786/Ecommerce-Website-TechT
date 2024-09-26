@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useProductContext } from "./context/productcontex";
+import PageNavigation from "./components/PageNavigation";
+import MyImage from "./components/MyImage";
 
 
 const API = "https://api.pujakaitem.com/api/products";
@@ -9,7 +11,7 @@ const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
 
-  const {getSingleProduct , singleProduct} = useProductContext()
+  const {getSingleProduct ,isSingleLoading, singleProduct} = useProductContext()
 // console.log(singleProduct)
 
   const {id} = useParams();
@@ -17,28 +19,26 @@ const SingleProduct = () => {
 
 
   const {
-    id: alias , name , company , price , description, category,stock , stars , reviews
+    id: alias ,image, name , company , price , description, category,stock , stars , reviews
   } =singleProduct;
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   },[getSingleProduct , id])
   
- 
+ if(isSingleLoading){
+  return <div className="page_loading">Loading . . . </div>
+ }
 
   return (
     <Wrapper>
-     <div className="container">
-      <h1>{name}</h1>{" "}
-      <h3>{alias}</h3>
-      <h3>{company}</h3>
-      <h2>{stars}</h2>
-      <h3>{reviews}</h3>
-      <h4>{price}</h4>
-      <h3>{category}</h3>
-      <h4>avaliable: {stock}</h4>
-      <p>{description}</p>
-      </div>  {" "}
+    <PageNavigation title={name}/>
+    <div className="container">
+     <div className="grid grid-two-columns">
+      <MyImage ime={image} />
+     </div>
+
+    </div>
       
     </Wrapper>
   );
