@@ -16,7 +16,7 @@ const FeatureProduct = () => {
       }
  
       if (!featureProducts || featureProducts.length === 0) {
-        return <div>No featured products available</div>; // Handle case when there are no featured products
+        return <div>No featured products available</div>; 
       }
 
 
