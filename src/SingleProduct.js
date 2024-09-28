@@ -48,8 +48,7 @@ const SingleProduct = () => {
       <Container className="container">
         <div className="grid grid-two-columns">
           <div className="product_images">
-           
-            <MyImage img={image} />
+            <MyImage imgs={image} />
           </div>
 
           <div className="product_data">
@@ -94,6 +93,9 @@ const SingleProduct = () => {
                   <span>{stock > 0 ? "In Stock" : "Not Avaliable"}</span></p>
                   <p>
                     ID : <span>{id}</span>
+                  </p>
+                  <p>
+                    Category: {category}
                   </p>
                   <p>
                     Brand : <span>{company}</span>
