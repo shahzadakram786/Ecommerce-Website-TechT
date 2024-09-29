@@ -8,6 +8,7 @@ import FormatPrice from "./helpers/FormatPrice";
 import { TbReplace, TbTruckDelivery } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
 import { Container } from "./styles/Container";
+import Stars from "./components/Stars";
 
 
 
@@ -46,13 +47,16 @@ const SingleProduct = () => {
     <Wrapper>
       <PageNavigation title={name} />
       <Container className="container">
-        <div className="grid grid-two-columns">
+        <div className="flex gap-20 flex-wrap md:flex-nowrap lg:flex-nowrap"  >
           <div className="product_images">
             <MyImage imgs={image} />
           </div>
 
-          <div className="product_data">
+          <div className="product-data">
             <h2>{name}</h2>
+           <div className="flex">
+            <Stars className="flex flex-col" stars = {stars} reviews={reviews}/>
+            </div> 
             <p>{stars}</p>
             <p>{reviews}</p>
             <div className="product-data-price">
@@ -72,7 +76,7 @@ const SingleProduct = () => {
                   <p>Free Delivery</p>
                 </div> 
                  
-                <div className="product-warranty-data flex justify-between items-center">
+                <div className="product-warranty-data">
                   <TbReplace className="warranty-icon"/>
                   <p>30 Days Replacement</p>
                 </div> 
@@ -95,7 +99,7 @@ const SingleProduct = () => {
                     ID : <span>{id}</span>
                   </p>
                   <p>
-                    Category: {category}
+                    Category: <span>{category ? category.charAt(0).toUpperCase() + category.slice(1) : ""}</span> 
                   </p>
                   <p>
                     Brand : <span>{company}</span>
@@ -120,6 +124,7 @@ const Wrapper = styled.section`
     align-items: flex-start;
     justify-content: center;
     gap: 2rem;
+    margin-top:2rem;
 
     .product-data-warranty {
       width: 100%;
@@ -127,17 +132,22 @@ const Wrapper = styled.section`
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #ccc;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      padding:2rem;
+      
 
       .product-warranty-data {
         text-align: center;
 
         .warranty-icon {
-          background-color: rgba(220, 220, 220, 0.5);
+          // background-color: rgba(220, 220, 220, 0.5);
+          background-color:black;
+          color:white;
           border-radius: 50%;
           width: 4rem;
           height: 4rem;
           padding: 0.6rem;
+          margin:auto;
         }
         p {
           font-size: 1.4rem;
