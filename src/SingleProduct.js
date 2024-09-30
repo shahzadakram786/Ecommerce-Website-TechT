@@ -57,8 +57,8 @@ const SingleProduct = () => {
            <div className="flex">
             <Stars className="flex flex-col" stars = {stars} reviews={reviews}/>
             </div> 
-            <p>{stars}</p>
-            <p>{reviews}</p>
+            {/* <p>{stars}</p> */}
+            {/* <p>{reviews}</p> */}
             <div className="product-data-price">
               MRP:
               <del>
