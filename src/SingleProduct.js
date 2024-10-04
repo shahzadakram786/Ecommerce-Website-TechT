@@ -9,6 +9,7 @@ import { TbReplace, TbTruckDelivery } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
 import { Container } from "./styles/Container";
 import Stars from "./components/Stars";
+import AddToCart from "./components/AddToCart";
 
 
 
@@ -17,10 +18,10 @@ const API = "https://api.pujakaitem.com/api/products";
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
-  // console.log(singleProduct)
+ 
 
   const { id } = useParams();
-  // console.log("id", id)
+  
 
   const {
     id: alias,
@@ -105,7 +106,8 @@ const SingleProduct = () => {
                     Brand : <span>{company}</span>
                   </p>
               </div> 
-
+              <hr />
+                {stock > 0 && <AddToCart product={singleProduct} />}
             </div>
           </div>
         </div>

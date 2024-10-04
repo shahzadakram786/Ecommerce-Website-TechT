@@ -1,33 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// import styled from "styled-components";
+import styled from "styled-components";
 import Nav from "./Nav";
 
 const Header = () => {
   return (
-    // <MainHeader>
+    <MainHeader>
     <>
       <NavLink>
         <img src="./images/logo.png" alt="Logo" />
       </NavLink>{" "}
       <Nav />
       </>
-    // </MainHeader>
+    </MainHeader>
   );
 };
 
-// const MainHeader = styled.header`
-//   padding: 0 4.8rem;
-//   height: 10rem;
-//   background-color: ${({ theme }) => theme.colors.bg};
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   position: relative;
+const MainHeader = styled.header`
+  padding: 0 4.8rem;
+  height: 10rem;
+  background-color: ${({ theme }) => theme.colors.bg};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 
-//   .logo{
-//   height= 5rem
-//   }
-// `;
+  .logo{
+  height= 5rem
+  }
+`;
 
 export default Header;
