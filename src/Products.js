@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-// import { useFilterContext } from "./context/filterContext";
-// import Sort from "./components/Sort";
+import { useFilterContext } from "./context/filterContext";
+import Sort from "./components/Sort";
 
 const Products = () => {
 
-// const{filter_products} = useFilterContext()
+const {filter_products }= useFilterContext()
 
-// console.log("filterProduct = ", filter_products)
+console.log("filterProduct = ", filter_products)
 
   return <Wrapper>
     <div className="container grid grid-filter-column">
       <div>
-        {/* <filterSection/> */}
+        <filterSection/>
       </div>
 
       <section className="product-view--sort">
         <div className="sort-filter">
-          {/* <Sort/> */}
+          <Sort/>
         </div>
       </section>
     </div>
