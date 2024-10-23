@@ -18,7 +18,7 @@ export const FilterContextProvider = ({ children }) => {
         // if (Array.isArray(products)) {
             dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
         // } else {
-            console.warn("Products is not an array:", products);
+            // console.warn("Products is not an array:", products);
         // }
     }, [products]);
 

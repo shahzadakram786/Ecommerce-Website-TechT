@@ -7,9 +7,12 @@ import FilterSection from "./components/FilterSection";
 
 const Products = () => {
 
-const {filter_products }= useFilterContext()
+const {filter_products }= useFilterContext();
 
-console.log("filterProduct = ", filter_products)
+
+
+
+// console.log("filterProduct = ", filter_products)
 
   return <Wrapper>
     <div className="container grid grid-filter-column">
