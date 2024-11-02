@@ -1,20 +1,20 @@
 const ProductReducer = (state , action) => {
 
-//     if(action.type === "SET_LOADING")
-// return {
-// ...state
-// ,
-// isLoading:true,
-// }
-// }
+    if(action.type === "SET_LOADING")
+return {
+...state
+,
+isLoading:true,
+}
+}
 
-// if(action.type == "Api_Error"){
+if(action.type == "Api_Error"){
 
-//     return {
-//         ...state,
-//         isLoading:true,
-//         isError:true
-//     }
+    return {
+        ...state,
+        isLoading:true,
+        isError:true
+    }
 
 
 
